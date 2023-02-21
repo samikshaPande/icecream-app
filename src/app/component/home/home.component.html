@@ -1,0 +1,23 @@
+<div >
+    <nav class="navbar navbar-expand-lg">
+        <div style="flex:1; flex-basis: 10%;">            
+            <div><img src="../../../assets/images/logo.png"  class="logo" width="80" height="70" alt="logo"></div>
+        </div>
+
+        <div class="loggedIn-user" style="display: inline-flex;">
+            <!-- <div style="padding: 0 10px">
+                Welcome <h5><i>Employee</i></h5>
+            </div> -->
+           
+        </div>
+    </nav>
+
+    <div class="wrapper-content">
+        <div class="wrapper-form">
+            <flavour-form (reloadData)="reloadIcecreamData()"></flavour-form>
+        </div>
+        <div class="wrapper-table">
+            <app-table-data></app-table-data>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<h2> All sorts of ice cream</h2><br>
+<div *ngFor="let data of appData" class="row" style="border-bottom: 1px solid grey;padding:10px 0">
+    <div class="col-lg-5" >
+        <h5>{{data.name}}</h5>
+    </div>
+    <div class="col-7" >
+        <details>
+            <summary><i>{{data.category}}</i></summary>
+            <table>
+                <tr style="border-bottom: 2px solid gray;">
+                    <th colspan="1"> Subcategory:</th>
+                    <td>
+                <tr *ngIf="data.cream">
+                    <td>Cream:</td>
+                    <td>{{data.cream}}</td>
+                </tr>
+                <tr *ngIf="data.milk">
+                    <td> Milk:</td>
+                    <td>{{data.milk}}</td>
+                </tr>
+                <tr *ngIf="data.flavours">
+                    <td>Flavours:</td>
+                    <td *ngFor="let flavour of data.flavours" class="fr">{{flavour}}</td>
+                </tr>
+                <tr *ngIf="data.fruit_content">
+                    <td >Fruit Contents: </td>
+                    <td>{{data.fruit_content}}</td>
+                </tr>
+                <tr *ngIf="data.fruits">
+                    <td>Fruits: </td>
+                    <td class="fr" *ngFor="let fruit of data.fruits">{{fruit}}</td>
+                </tr>
+                </td>
+                </tr>
+                
+                <tr style="border-bottom: 2px solid gray;">
+                    <th colspan="1">Ingredients:</th>
+                    <td>
+                        <ul *ngFor="let item of data.ingredient">
+                            <li>{{item.ingredientName}}</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Food allergens:</td>
+                    <td>{{data.allergen}}</td>
+                </tr>
+                <tr>
+                    <td>Nutrition Value:</td>
+                    <td>{{data.nutriValue}}</td>
+                </tr>
+                <tr>
+                    <td>Buying Price: </td>
+                    <td>{{data.sellingPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Selling Price: </td>
+                    <td>{{data.buyingPrice}}</td>
+                </tr>
+
+            </table>
+            
+        </details>
+       
+    </div>
+</div>

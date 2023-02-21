@@ -1,0 +1,81 @@
+.input-box {
+    position: relative;
+    padding:5px;
+    margin: 15px 0;
+    width: 100%;
+    border-bottom: 2px solid #3d3c3c;
+    background: transparent;
+    display: flex;
+}
+
+.input-box input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0px 0px 0 5px;
+    color: #3d3c3c;
+}
+
+.input-time {
+    float: right;
+    width: 50%;
+}
+
+select {
+    outline: none;
+    border: none;
+    padding: 0 5px 5px 5px;
+    width: inherit;
+}
+
+textarea {
+    width: inherit;
+    padding:10px;
+}
+.btn {
+    margin-right: 15px;
+}
+
+.add-icon{
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    float: right;
+}
+
+.remove-icon{
+    margin-top: 8px;
+    margin-left: -25px;
+    cursor: pointer;
+}
+
+.sub-item{
+    margin-left: 5rem;
+    border-bottom: 1px solid #3d3c3c;
+}
+
+.sub-item input{
+    outline: none;
+    border:none;
+    padding:5px;
+    width: 80%;
+}
+
+.btn-secondary {
+    margin: 20px;
+    width: 100px;
+    padding: 1rem;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    color: #000;
+    border: solid 2px #3d3c3c;
+    background-color: lavenderblush;   
+}
+
+#ingredient{
+    width: 50%;
+}
+

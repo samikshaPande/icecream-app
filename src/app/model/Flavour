@@ -1,0 +1,10 @@
+export interface Flavour {
+  id: string;
+  title: string;
+  startTime: string;
+  endTime: string;
+  clientName: string;
+  doctor: string;
+  status: number;
+  selectedDate: string;
+}

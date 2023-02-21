@@ -1,0 +1,60 @@
+<h2> Add New Flavour</h2>
+
+<div class="form-value">
+    <form [formGroup]="newFlavourForm">
+        <div class="input-box">
+            <label for="name">Name: </label>
+            <input id="name" type="text" formControlName="name" placeholder="What kind of ice cream?">
+        </div>
+        <div class="input-box">
+            <label for="category">Category: </label>
+            <select formControlName="category" (ngModelChange)="changeCategory($event)">
+                <option value="">Please Select</option>
+                <option *ngFor="let item of categoryList; let i=index" [value]="item.name">{{item.name}}</option>
+            </select>
+        </div>
+
+        <div class="sub-item" *ngFor="let subCat of subCategoryList">
+            <label for="name">{{subCat.name | titlecase }}: </label>
+            <input id="name" type="text" formControlName="{{subCat.name}}" [placeholder]="(subCat.name == 'flavours' || subCat.name == 'fruits') ? 'Provide comma separated value':'%'">
+        </div>
+
+        <div class="input-box">
+            <label for="ingredient">Ingredients: </label>
+            <div id="ingredient" style="width:90%" formArrayName="ingredient">
+                <div *ngFor="let quantity of ingredients().controls; let i=index" style="display: flex;"
+                    [formGroupName]="i">
+                    <input id="ingredient" type="text" style="border:2px solid grey; margin:2px 5px"
+                        formControlName="ingredientName">
+                    <ion-icon name="close-outline" title="Click to remove ingredient" (click)="removeIngredient(i)" class="remove-icon"></ion-icon>
+                </div>
+                <ion-icon name="add-outline" class="add-icon" title="Click to add ingredients" (click)="addIngredient()"></ion-icon>
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="allergen">List of food allergens: </label>
+            <textarea id="allergen" type="textarea" formControlName="allergen" rows="4" cols="50"
+                placeholder="Please fill out"></textarea>
+        </div>
+        <div class="input-box">
+            <label for="nutriValue">Nutrition Value: </label>
+            <input id="nutriValue" type="text" formControlName="nutriValue" placeholder="In Kcal / 100 g">
+        </div>
+        <div class="input-box">
+            <label for="buyingPrice">Buying Price:</label>
+            <input id="buyingPrice" type="text" formControlName="buyingPrice" placeholder="In Euro / 1Liter">
+        </div>
+        <div class="input-box">
+            <label for="sellingPrice">Selling Price:</label>
+            <input id="sellingPrice" type="text" formControlName="sellingPrice" placeholder="In Euro / 1Liter">
+        </div>
+    </form>
+</div>
+
+<p *ngIf="isError" class="err-msg">{{errMsg}}</p>
+
+<div style="width:100%;display: flex; justify-content: right;">
+    <button mat-button class="btn btn-secondary" (click)="resetData()">Reset</button>
+    <button mat-button class="btn btn-gradient" cdkFocusInitial (click)="validateFlavourName()"
+        [disabled]="!newFlavourForm.valid">Add</button>
+</div>

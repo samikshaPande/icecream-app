@@ -1,0 +1,49 @@
+nav {
+    background-image: linear-gradient(10deg, rgb(241, 230, 232), rgb(234, 195, 234), rgb(235, 91, 245), rgb(176, 227, 242));
+    color: #fff;
+    width: 100vw;
+}
+
+.logo {
+    margin-left: 1.25rem;
+    rotate: 30deg;
+}
+
+.loggedIn-user {
+    color: white;
+}
+
+.loggedIn-user h5:hover {
+    text-decoration: underline;
+}
+
+.wrapper-content {
+    display: flex;
+    gap: 10px;
+}
+
+.wrapper-form {
+    flex: 1;
+    flex-basis: 300px;
+    padding: 20px;
+    margin:20px 20px 20px 2%;
+    background-color: ivory;
+}
+
+.wrapper-table {
+    flex-basis: 50%;
+    flex: 2;
+    margin:20px;
+    padding: 20px;
+    background-color: gainsboro;
+}
+
+
+
+@media (max-width: 700px) {
+    .wrapper-content {
+        display: block;
+    }
+
+
+}
